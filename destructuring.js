@@ -12,6 +12,11 @@ var carDetails = {
 }
 
 // CODE HERE
+const { color, make, model, year } = carDetails;
+
+console.log(color, make, model, year);
+
+// : c, make: m, mod: md, year: y} = carDetails
 
 
 // ========================
@@ -21,8 +26,10 @@ var carDetails = {
 
 function greeting( obj ) {
   // CODE HERE
-  
+const { firstName, lastName, title } = obj;
+
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
+
 }
 
 
@@ -33,6 +40,13 @@ function greeting( obj ) {
 
   // CODE HERE
 
+  function totalPopulation( obj ) {
+  const { utah, california, texas, arizona } = obj;
+  
+    return utah + california + texas + arizona;
+  
+  }
+
 
 // ========================
 
@@ -40,7 +54,12 @@ function greeting( obj ) {
 // Write a function called ingredients that will take in an object. This object will have 3 properties named carb, fat, and protein. The property values will be strings. Use object destructuring to save the property values to new variables. Push these new variables to an array and return the array. 
 
   // CODE HERE
-
+function ingredients( obj ) {
+  const { carb, fat, protein } = obj;
+  var newArr = [];
+  newArr.push(carb, fat, protein)
+    return newArr;
+  }
 
 // ========================
 
@@ -54,6 +73,14 @@ function greeting( obj ) {
 // Write a function called largeNumbers that will take a destructured object as it's parameter. The object properties will be named first, second, and third and their values will be numbers. Find the smallest number of the three and return that number.
 
   // CODE HERE
+  
+  function largeNumbers (object){
+    const { first, second, third } = object;
+    var temp = Math.min(first, second, third);
+    console.log(first, second, third);
+    console.log(temp); 
+    return temp;  
+  }
 
 
 // ========================
@@ -62,3 +89,22 @@ function greeting( obj ) {
 // Write a function called numberGroups that will take a destructured object as it's parameter. The object properties will be named a, b, and c and their values will be arrays of numbers. Find the longest array and return that array. 
 
   // CODE HERE
+//   const {a, b, c} = object;
+function numberGroups(object){
+
+const { a, b, c } = object;
+var tempArr = [];
+console.log(tempArr);
+if (a.length > b.length && a.length > c.length){
+  tempArr = a;
+  //console.log(a);
+} else if (b.length > a.length && b.length > c.length){
+  tempArr = b;
+  //console.log(tempArr);
+} else if (c.length > a.length && c.length > b.length){
+  tempArr = c;
+  //console.log(tempArr);
+}
+
+return tempArr;
+}

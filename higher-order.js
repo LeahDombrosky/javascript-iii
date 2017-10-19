@@ -4,8 +4,11 @@
 // We want to filter down to just the even numbers
 
 // The filter function takes a callback with the parameters
-// function(element, index, wholeArray){}  Function Form
+// 
 // (element, index, wholeArray)=>{}    Arrow Form
+var evenNumbers = (element, index, wholeArray) => wholeArray.filter((element) => element % 2 === 0); 
+// var evenNumbers = plusone.filter((n) => n % 2 === 0); 
+
 
 const mixedNumbers = [6,3,1,7,5,2,6,8,9,4,2,7,9,3,1,8,4,3];
 
@@ -79,4 +82,13 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 {"owner":"Barry","price":30},{"owner":"Barry","price":129},{"owner":"Barry","price":38},
 {"owner":"Bob","price":133},{"owner":"Barry","price":109},{"owner":"Bob","price":115}]
 
-let bobsTotal // Your code here
+let bobsTotal  = purchases.reduce(cb, 0)// Your code here
+
+function cb(acc, cur, ind, arr){
+    console.log(acc, cur);
+    if(cur.owner ==='Bob'){
+        return acc + cur.price;
+    }
+    return acc;
+    
+}
